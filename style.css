@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    padding: 25px;
+    background-color: #F3EB1C;
+}
+.header{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px  2px 1px black;
+}
+#input-box{
+    padding: 23px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+input,textarea{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: black;
+}
+#addNote{
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    border: none;
+    font-size: 30px;
+}
+#notes{
+    width: 100%;
+    padding: 23px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.note{
+    width: 300px;
+    padding: 12px;
+    margin: 12px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: transparent;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.bottom{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.top{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+gap: -10px;
+margin-top: 10px;
+}
+.deleteNote{
+    float: right;
+    border-radius: 10px;
+    font-weight: 600;
+    border: none;
+    padding: 5px 10px;
+}
+.archiveNote{
+    float: right;
+    margin-right: 5px;
+    border-radius: 10px;
+    border: none; 
+    font-weight: 600;
+    padding: 5px 10px;
+}
