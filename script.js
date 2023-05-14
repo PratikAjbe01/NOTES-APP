@@ -44,8 +44,8 @@ function showNotes() {
         <i class="archiveNote fa-solid fa-bookmark" id=${i} onclick="archiveNote(${i})"></i>
         </div>
         <div class="top">
-          <span class="title">${notes[i].title === "" ? 'Note' : notes[i].title}</span><br>
-          <div class="text"><textarea id="input-text-${i}" onclick="updateNoteText(${i})">${notes[i].text}</textarea></div>
+          <textarea class="title" type="text" id="input-title-${i}" oninput="updateNoteText(${i})">${notes[i].title === "" ? 'Note' : notes[i].title}</textarea><br>
+          <div class="text"><textarea id="input-text-${i}" oninput="updateNoteText(${i})">${notes[i].text}</textarea></div>
         </div>
       </div>`;
   }
@@ -223,16 +223,27 @@ function deleteArchive(ind){
     showArchiveNote();
 }
 
-function updateNoteText(index) {
-  console.log("uptate hello");
-  let notes = localStorage.getItem('notes');
+function updateNoteText(ind) {
+
+  let notes = localStorage.getItem("notes");
+  
   if (notes === null) {
-    return;
+  
+  return;
+  
   } else {
-    notes = JSON.parse(notes);
+  
+  notes = JSON.parse(notes);
+  
   }
-  const textarea = document.getElementById(input-text);
-  const updatedText = textarea.value;
-  notes[index].text = updatedText;
-  localStorage.setItem('notes', JSON.stringify(notes));
-}
+  const updatedText = document.getElementById(`input-text-${ind}`).value;
+  const updatedTitle = document.getElementById(`input-title-${ind}`).value;
+  
+  notes[ind].text = updatedText;
+  notes[ind].title=updatedTitle;
+  
+  
+  
+  localStorage.setItem("notes", JSON.stringify(notes));
+  
+  }
